@@ -8,6 +8,8 @@ import {
   formatDistance,
   formatRelative,
   subDays,
+  eachWeekOfInterval,
+  eachWeekendOfYear,
 } from 'date-fns';
 import { sv } from 'date-fns/locale';
 import { useEffect, useState } from 'react';
@@ -20,9 +22,15 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import InfoCard from '@/components/custom/InfoCard';
+import YearProgress from '@/components/custom/YearProgress';
 
 export default function Home() {
   const date = new Date();
+  const currentYear = date.getFullYear();
+
+  const weekends = eachWeekendOfYear(new Date(currentYear, 0, 1));
+
+  console.log(weekends);
 
   const [isItFriday, setIsItFriday] = useState(false);
 
@@ -31,7 +39,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='p-4'>
+    <main className='flex flex-col gap-4 p-4'>
+      <YearProgress />
       <div className='grid grid-cols-2 gap-4'>
         <InfoCard
           infoTitle='Vecka'
@@ -39,17 +48,25 @@ export default function Home() {
         />
         <InfoCard
           infoTitle='Är det fredag?'
-          infoHeading={isItFriday ? 'JA' : 'NEJ'}
+          infoHeading={isItFriday ? 'JA 🎉' : 'NEJ'}
           infoDesc={`Idag är det ${format(date, 'eeee', { locale: sv })}`}
         />
 
+        <InfoCard infoTitle='Datum veckor' infoDesc='yo' />
+
         <InfoCard
-          infoTitle='Datum veckor'
-          infoHeading={isItFriday ? 'JA' : 'NEJ'}
-          infoDesc={`Idag är det ${format(date, 'eeee', { locale: sv })}`}
+          infoTitle='Alla lördagar söndagar'
+          infoDesc={
+            <ul>
+              {weekends.map((weekend, idx) => (
+                <li key={idx}>
+                  {format(weekend, 'dd MMMM yyyy', { locale: sv })}
+                </li>
+              ))}
+            </ul>
+          }
         />
       </div>
-      <p>{format(date, 'yyyy-MM-dd HH:mm', { locale: sv })}</p>
     </main>
   );
 }
