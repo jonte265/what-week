@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <main className='flex flex-col gap-4 p-4'>
       <YearProgress />
-      <div className='grid grid-cols-2 gap-4'>
+      <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
         <InfoCard
           infoTitle='Vecka'
           infoHeading={` ${format(date, 'w', { locale: sv })}`}
@@ -62,11 +62,11 @@ export default function Home() {
         <InfoCard
           infoTitle='Är det fredag?'
           infoHeading={isItFriday ? 'JA 🎉' : 'NEJ'}
-          infoDesc={`Idag är det ${format(date, 'eeee', { locale: sv })}`}
+          infoDescMuted={`Idag är det ${format(date, 'eeee', { locale: sv })}`}
         />
 
         <InfoCard
-          infoTitle='Alla veckor'
+          infoTitle={`Alla veckor ${currentYear}`}
           infoDesc={
             <ul className='text-sm space-y-1'>
               {allWeeks.map((weekStartDate, index) => {
