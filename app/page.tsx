@@ -42,8 +42,14 @@ export default function Home() {
           infoHeading={isItFriday ? 'JA' : 'NEJ'}
           infoDesc={`Idag är det ${format(date, 'eeee', { locale: sv })}`}
         />
+
+        <InfoCard
+          infoTitle='Datum veckor'
+          infoHeading={isItFriday ? 'JA' : 'NEJ'}
+          infoDesc={`Idag är det ${format(date, 'eeee', { locale: sv })}`}
+        />
       </div>
-      <p>{format(date, 'yyyy-MM-dd HH:mm')}</p>
+      <p>{format(date, 'yyyy-MM-dd HH:mm', { locale: sv })}</p>
     </main>
   );
 }
