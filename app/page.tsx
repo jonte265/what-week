@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
-    <div>
-      <h1>Week</h1>
+    <main className='p-4'>
+      <h1 className=''>Week</h1>
       <Button>Click me</Button>
-    </div>
+    </main>
   );
 }

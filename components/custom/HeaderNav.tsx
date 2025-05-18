@@ -2,8 +2,8 @@ import { ModeToggle } from '../ui/ModeToggle';
 
 function HeaderNav() {
   return (
-    <header>
-      <h1>Vilken Vecka</h1>
+    <header className='flex justify-between items-center p-4'>
+      <h1 className='font-semibold'>Vilken Vecka</h1>
       <ModeToggle />
     </header>
   );
