@@ -32,8 +32,6 @@ export default function Home() {
 
   const weekends = eachWeekendOfYear(new Date(currentYear, 0, 1));
 
-  // console.log(weekends);
-
   const allWeeks = eachWeekOfInterval(
     {
       start: new Date(currentYear, 0, 1),
@@ -41,8 +39,6 @@ export default function Home() {
     },
     { weekStartsOn: 1 }
   );
-
-  console.log('yeee', allWeeks);
 
   const [isItFriday, setIsItFriday] = useState(false);
 
