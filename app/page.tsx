@@ -34,7 +34,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='flex flex-col gap-4 p-4'>
+    <main className='flex flex-col gap-4 p-4 max-w-4xl mx-auto'>
       <YearProgress />
       <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
         <InfoCard

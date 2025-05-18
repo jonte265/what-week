@@ -2,6 +2,8 @@
 
 ## Live Demo
 
+https://what-week.vercel.app/
+
 ## Beskrivning
 
 - **Aktuell vecka**: Se vilken vecka du är i 🗓️
