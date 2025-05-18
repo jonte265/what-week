@@ -1,11 +1,4 @@
-import {
-  isFriday,
-  format,
-  addDays,
-  formatDistance,
-  formatRelative,
-  subDays,
-} from 'date-fns';
+import { format } from 'date-fns';
 import { sv } from 'date-fns/locale';
 import { ModeToggle } from '../ui/ModeToggle';
 

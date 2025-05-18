@@ -1,5 +1,4 @@
-import { format, getDayOfYear } from 'date-fns';
-import { sv } from 'date-fns/locale';
+import { getDayOfYear } from 'date-fns';
 
 function YearProgress() {
   const date = new Date();
