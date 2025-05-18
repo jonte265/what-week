@@ -6,7 +6,7 @@ type infoCardType = {
 
 function InfoCard({ infoTitle, infoHeading, infoDesc }: infoCardType) {
   return (
-    <div className='border-2 rounded-2xl p-4 flex flex-col items-center justify-center gap-2'>
+    <div className='border-2 rounded-2xl p-4 flex flex-col items-center justify-start gap-2'>
       <h2 className='text-2xl font-bold'>{infoTitle}</h2>
       <h3 className='text-xl font-semibold text-blue-800 dark:text-blue-400'>
         {infoHeading}
