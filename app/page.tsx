@@ -32,14 +32,16 @@ export default function Home() {
 
   return (
     <main className='p-4'>
-      <div className='grid gap-4'>
+      <div className='grid grid-cols-2 gap-4'>
+        <InfoCard
+          infoTitle='Vecka'
+          infoHeading={` ${format(date, 'w', { locale: sv })}`}
+        />
         <InfoCard
           infoTitle='Är det fredag?'
           infoHeading={isItFriday ? 'JA' : 'NEJ'}
           infoDesc={`Idag är det ${format(date, 'eeee', { locale: sv })}`}
         />
-
-        <InfoCard infoTitle={`V: ${format(date, 'w', { locale: sv })}`} />
       </div>
       <p>{format(date, 'yyyy-MM-dd HH:mm')}</p>
     </main>
